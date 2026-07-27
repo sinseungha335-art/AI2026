@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인공지능일반 학습 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-white border-b border-slate-200 py-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-indigo-600">AI Learning Portfolio</h1>
+            <div class="space-x-4 text-sm font-medium text-slate-600">
+                <span>인공지능일반</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">인공지능일반 학습 포트폴리오</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">디지털 대전환의 시대, AI를 이해하고 도구로서 활용하며 문제를 해결해 나간 한 학기의 여정을 기록합니다.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+            <!-- Cards will be injected by JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        const portfolioData = [
+            { title: "생성형 AI 활용 원칙", desc: "윤리적이고 창의적인 AI 활용을 위한 나만의 가이드라인과 원칙 수립", icon: "shield-check" },
+            { title: "AI 스토리와 영상", desc: "생성형 AI를 활용하여 구성한 창의적인 스토리텔링과 영상 제작 결과물", icon: "film" },
+            { title: "진로 데이터 분석", desc: "희망 진로 관련 데이터를 수집하고 시각화하여 통찰력을 도출한 분석 과정", icon: "bar-chart-2" },
+            { title: "나의 진로 리포트", desc: "데이터 기반의 진로 설계 및 AI를 활용한 구체적인 미래 로드맵 리포트", icon: "book-open" },
+            { title: "지역 문제 데이터 분석", desc: "우리 지역사회의 당면 과제를 공공데이터로 분석하여 해결책 모색", icon: "map" },
+            { title: "학교 문제 해결 웹앱", desc: "학교 내 불편함을 해소하기 위해 기획하고 개발한 인터랙티브 웹 애플리케이션", icon: "code" },
+            { title: "공공데이터 앱", desc: "공공 데이터를 활용하여 실생활의 문제를 해결하는 효율적인 서비스 구축", icon: "smartphone" },
+            { title: "최종 성찰", desc: "한 학기 동안 인공지능을 탐구하며 느낀 점과 성장한 나의 모습 기록", icon: "feather" }
+        ];
+
+        const grid = document.getElementById('portfolio-grid');
+        portfolioData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-100 card-hover";
+            card.innerHTML = `
+                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="${item.icon}"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-800 mb-2">${item.title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">${item.desc}</p>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+
+    <footer class="border-t border-slate-200 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 AI Learning Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
