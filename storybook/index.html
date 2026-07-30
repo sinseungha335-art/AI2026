@@ -371,6 +371,13 @@
     </main>
 
     <footer class="border-t border-slate-800 bg-slate-950 py-8 px-4 text-center text-xs text-slate-500 mt-12">
+        <p>© 2026 승하의 별빛 여정. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToScene(sceneNum) {
+            const card = document.getElementById(`scene-card-${sceneNum}`);
+            if (card) {
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 card.classList.add('ring-2', 'ring-indigo-500');
                 setTimeout(() => {
