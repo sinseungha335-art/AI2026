@@ -48,18 +48,22 @@
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             <!-- Brand Title & Subtitle -->
-            <div class="flex items-center space-x-3 shrink-0">
+            <a href="index.html" class="flex items-center space-x-3 shrink-0 hover:opacity-90 transition group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-500/20 shrink-0">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
                 <div class="whitespace-nowrap">
-                    <h1 class="font-bold text-base sm:text-lg leading-tight text-slate-900 tracking-tight">2025 대학 컴퓨터공학과 지표 분석</h1>
+                    <h1 class="font-bold text-base sm:text-lg leading-tight text-slate-900 tracking-tight group-hover:text-blue-600 transition">2025 대학 컴퓨터공학과 지표 분석</h1>
                     <p class="text-xs text-slate-500 mt-0.5">전국 49개 대학 핵심 통계 보고서</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Navigation Bar -->
             <nav class="hidden xl:flex items-center space-x-1 text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">
+                <a href="index.html" class="px-3 py-2 rounded-lg text-blue-600 bg-blue-50/80 font-semibold hover:bg-blue-100 transition flex items-center space-x-1">
+                    <i class="fa-solid fa-house text-xs"></i>
+                    <span>홈</span>
+                </a>
                 <a href="#overview" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">개요</a>
                 <a href="#basic-stats" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">전체 통계</a>
                 <a href="#establishment" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">설립유형별</a>
@@ -68,11 +72,17 @@
                 <a href="#conclusion" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">시사점</a>
             </nav>
 
-            <!-- Print Action Button -->
-            <button onclick="window.print()" class="shrink-0 whitespace-nowrap px-3.5 py-2 text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition flex items-center space-x-1.5 shadow-sm">
-                <i class="fa-solid fa-print"></i>
-                <span>보고서 인쇄</span>
-            </button>
+            <!-- Header Action Buttons -->
+            <div class="flex items-center space-x-2 shrink-0">
+                <a href="index.html" class="whitespace-nowrap px-3.5 py-2 text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition flex items-center space-x-1.5 shadow-sm border border-slate-200">
+                    <i class="fa-solid fa-house"></i>
+                    <span>홈</span>
+                </a>
+                <button onclick="window.print()" class="whitespace-nowrap px-3.5 py-2 text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-white rounded-lg transition flex items-center space-x-1.5 shadow-sm">
+                    <i class="fa-solid fa-print"></i>
+                    <span>보고서 인쇄</span>
+                </button>
+            </div>
         </div>
     </header>
 
