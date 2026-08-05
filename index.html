@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,76 +36,98 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        body { font-family: 'Pretendard', sans-serif; }
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+
         .dark .glass-card {
             background: rgba(30, 41, 59, 0.85);
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .card-hover:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         .dark ::-webkit-scrollbar-track {
             background: #0f172a;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
         }
+
         .dark ::-webkit-scrollbar-thumb {
             background: #334155;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
 
     <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800 glass-card transition-all duration-300">
+    <nav
+        class="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800 glass-card transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 font-extrabold text-xl">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 font-extrabold text-xl">
                     AI
                 </div>
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">교과 포트폴리오</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">교과
+                        포트폴리오</span>
                     <h1 class="text-base font-bold text-slate-900 dark:text-white leading-none">인공지능일반</h1>
                 </div>
             </div>
 
             <!-- Header Quick Stats & Controls -->
             <div class="flex items-center gap-4">
-                <div class="hidden sm:flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                <div
+                    class="hidden sm:flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span>2026학년도 성과집</span>
                 </div>
-                
+
                 <!-- Dark Mode Toggle Button -->
-                <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none" title="테마 변경">
+                <button id="themeToggle"
+                    class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none"
+                    title="테마 변경">
                     <i class="fa-solid fa-moon dark:hidden"></i>
                     <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
                 </button>
@@ -113,37 +136,50 @@
     </nav>
 
     <!-- Hero Banner Section -->
-    <header class="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-indigo-50/50 via-purple-50/30 to-slate-50 dark:from-indigo-950/30 dark:via-purple-950/10 dark:to-slate-950">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
+    <header
+        class="relative overflow-hidden pt-12 pb-16 bg-gradient-to-b from-indigo-50/50 via-purple-50/30 to-slate-50 dark:from-indigo-950/30 dark:via-purple-950/10 dark:to-slate-950">
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
+        </div>
+
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-12 gap-8 items-center">
                 <!-- Profile & Intro text -->
                 <div class="md:col-span-8 space-y-4 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300">
                         <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
                         AI 융합 미래인재 포트폴리오
                     </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
                         생성형 AI부터 데이터 분석까지,<br>
                         <span class="gradient-text">세상을 바꿀 인공지능 탐구</span>
                     </h2>
                     <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                        안녕하세요! 컴퓨터공학과 및 인공지능학과 진학을 목표로 탐구하고 있는 학생 <strong class="text-indigo-600 dark:text-indigo-400 font-bold">승하</strong>입니다. '인공지능일반' 교과 수업 동안 수행한 윤리적 원칙 정립, 창의적 미디어 제작, 데이터 기반 진로 및 지역·학교 문제 해결 프로젝트, 그리고 최종 성찰을 기록한 포트폴리오입니다.
+                        안녕하세요! 컴퓨터공학과 및 인공지능학과 진학을 목표로 탐구하고 있는 학생 <strong
+                            class="text-indigo-600 dark:text-indigo-400 font-bold">승하</strong>입니다. '인공지능일반' 교과 수업 동안 수행한
+                        윤리적 원칙 정립, 창의적 미디어 제작, 데이터 기반 진로 및 지역·학교 문제 해결 프로젝트, 그리고 최종 성찰을 기록한 포트폴리오입니다.
                     </p>
-                    
+
                     <!-- Badges -->
                     <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2 text-xs font-medium">
-                        <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
-                            <i class="fa-solid fa-user-graduate text-indigo-500"></i> 작성자: <strong class="text-slate-900 dark:text-white">승하</strong>
+                        <span
+                            class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-user-graduate text-indigo-500"></i> 작성자: <strong
+                                class="text-slate-900 dark:text-white">승하</strong>
                         </span>
-                        <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
-                            <i class="fa-solid fa-laptop-code text-indigo-500"></i> 희망진로: <strong class="text-indigo-600 dark:text-indigo-400">컴퓨터공학과 · 인공지능학과</strong>
+                        <span
+                            class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-laptop-code text-indigo-500"></i> 희망진로: <strong
+                                class="text-indigo-600 dark:text-indigo-400">컴퓨터공학과 · 인공지능학과</strong>
                         </span>
-                        <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
                             <i class="fa-solid fa-folder-open text-purple-500"></i> 총 8개 핵심 프로젝트
                         </span>
-                        <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 shadow-sm flex items-center gap-1.5">
                             <i class="fa-solid fa-check-circle text-emerald-500"></i> 검증 완료
                         </span>
                     </div>
@@ -151,8 +187,10 @@
 
                 <!-- Overall Stats Box -->
                 <div class="md:col-span-4">
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center justify-between">
+                    <div
+                        class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+                        <h3
+                            class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center justify-between">
                             <span>학습 역량 요약</span>
                             <i class="fa-solid fa-chart-pie text-indigo-500"></i>
                         </h3>
@@ -185,7 +223,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs text-slate-500">
+                        <div
+                            class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs text-slate-500">
                             <span>최종 업데이트: 2026. 07</span>
                             <span class="font-bold text-slate-700 dark:text-slate-300">총 평가: A+</span>
                         </div>
@@ -202,27 +241,34 @@
         <div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <!-- Filter Tabs -->
             <div class="flex flex-wrap gap-2" id="filterContainer">
-                <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-500/20">
+                <button data-filter="all"
+                    class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-500/20">
                     전체 보기 (8)
                 </button>
-                <button data-filter="ethics" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
+                <button data-filter="ethics"
+                    class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
                     윤리 & 스토리
                 </button>
-                <button data-filter="data" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
+                <button data-filter="data"
+                    class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
                     데이터 분석
                 </button>
-                <button data-filter="app" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
+                <button data-filter="app"
+                    class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
                     문제해결 앱
                 </button>
-                <button data-filter="reflection" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
+                <button data-filter="reflection"
+                    class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700">
                     진로 & 성찰
                 </button>
             </div>
 
             <!-- Search Bar -->
             <div class="relative w-full md:w-64">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                <input type="text" id="searchInput" placeholder="프로젝트 키워드 검색..." class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition-all">
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="프로젝트 키워드 검색..."
+                    class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition-all">
             </div>
         </div>
 
@@ -230,19 +276,25 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
 
             <!-- Card 1: 생성형 AI 활용 원칙 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="ethics" data-title="생성형 AI 활용 원칙 AI 윤리 헌장">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="ethics" data-title="생성형 AI 활용 원칙 AI 윤리 헌장">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-shield-halved"></i> AI 윤리 & 원칙
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 01</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-scale-balanced"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                         생성형 AI 활용 원칙
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -252,11 +304,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#AI윤리</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#FactCheck</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#저작권</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#AI윤리</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#FactCheck</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#저작권</span>
                     </div>
-                    <a href="./notebooklm/index.html" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <a href="./notebooklm/index.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -264,19 +320,25 @@
             </div>
 
             <!-- Card 2: AI 스토리와 영상 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="ethics" data-title="AI 스토리와 영상 프롬프트 콘티 미디어 제작">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="ethics" data-title="AI 스토리와 영상 프롬프트 콘티 미디어 제작">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-900/60 text-purple-600 dark:text-purple-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-900/60 text-purple-600 dark:text-purple-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-clapperboard"></i> 창의 미디어
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 02</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-film"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                         AI 스토리와 영상
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -286,11 +348,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#프롬프트엔지니어링</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#RunwayGen2</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#스토리보드</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#프롬프트엔지니어링</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#RunwayGen2</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#스토리보드</span>
                     </div>
-                    <a href="./storybook/index.html" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <a href="./storybook/index.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -298,19 +364,25 @@
             </div>
 
             <!-- Card 3: 진로 데이터 분석 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="data" data-title="진로 데이터 분석 AI 직업 수요 채용 트렌드 데이터">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="data" data-title="진로 데이터 분석 AI 직업 수요 채용 트렌드 데이터">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-chart-column"></i> 데이터 분석
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 03</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         진로 데이터 분석
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -320,11 +392,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#Python통계</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#채용트렌드</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#시각화</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#Python통계</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#채용트렌드</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#시각화</span>
                     </div>
-                    <button onclick="openModal('modal-3')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <button onclick="openModal('modal-3')"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
@@ -332,19 +408,25 @@
             </div>
 
             <!-- Card 4: 나의 진로 리포트 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="reflection" data-title="나의 진로 리포트 로드맵 컴퓨터공학과 인공지능학과 SWOT 분석">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="reflection" data-title="나의 진로 리포트 로드맵 컴퓨터공학과 인공지능학과 SWOT 분석">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-compass"></i> 진로 탐구
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 04</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-user-gear"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark group-hover:text-emerald-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark group-hover:text-emerald-400 transition-colors">
                         나의 진로 리포트
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -354,11 +436,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#진로로드맵</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#SWOT분석</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#역량계획</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#진로로드맵</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#SWOT분석</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#역량계획</span>
                     </div>
-                    <a href="./data1/index.html" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <a href="./data1/index.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -366,19 +452,25 @@
             </div>
 
             <!-- Card 5: 지역 문제 데이터 분석 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="data" data-title="지역 문제 데이터 분석 교통 재활용 스마트시티 문제 해결">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="data" data-title="지역 문제 데이터 분석 교통 재활용 스마트시티 문제 해결">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/60 text-amber-600 dark:text-amber-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/60 text-amber-600 dark:text-amber-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot"></i> 지역 문제 분석
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 05</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                         지역 문제 데이터 분석
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -388,31 +480,41 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#지역사회</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#스마트시티</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#공공데이터</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#지역사회</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#스마트시티</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#공공데이터</span>
                     </div>
-                    <button onclick="openModal('modal-5')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <a href="./kids/index.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-600 hover:text-white dark:hover:bg-amber-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
 
             <!-- Card 6: 학교 문제 해결 웹앱 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="app" data-title="학교 문제 해결 웹앱 급식 대기시간 잔반 감축 AI 예측 서비스">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="app" data-title="학교 문제 해결 웹앱 급식 대기시간 잔반 감축 AI 예측 서비스">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-900/60 text-teal-600 dark:text-teal-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-900/60 text-teal-600 dark:text-teal-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-mobile-screen"></i> 학교 솔루션 App
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 06</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                         학교 문제 해결 웹앱
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -422,11 +524,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#웹앱개발</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#실시간예측</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#학교생활</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#웹앱개발</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#실시간예측</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#학교생활</span>
                     </div>
-                    <button onclick="openModal('modal-6')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-teal-600 hover:text-white dark:hover:bg-teal-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <button onclick="openModal('modal-6')"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-teal-600 hover:text-white dark:hover:bg-teal-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
@@ -434,19 +540,25 @@
             </div>
 
             <!-- Card 7: 공공데이터 앱 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="app" data-title="공공데이터 앱 API 안전 산책로 대중교통 혼잡도 안심 귀가">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-rose-500/10 rounded-full blur-2xl group-hover:bg-rose-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="app" data-title="공공데이터 앱 API 안전 산책로 대중교통 혼잡도 안심 귀가">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-rose-500/10 rounded-full blur-2xl group-hover:bg-rose-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-code"></i> Open API 활용
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 07</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-database"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
                         공공데이터 앱
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -456,11 +568,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#OpenAPI</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#안전서비스</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#데이터연동</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#OpenAPI</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#안전서비스</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#데이터연동</span>
                     </div>
-                    <button onclick="openModal('modal-7')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-rose-600 hover:text-white dark:hover:bg-rose-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <button onclick="openModal('modal-7')"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-rose-600 hover:text-white dark:hover:bg-rose-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
@@ -468,19 +584,25 @@
             </div>
 
             <!-- Card 8: 최종 성찰 내용 -->
-            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group" data-category="reflection" data-title="최종 성찰 내용 학습 소감 미래 성장 평가 셀프 피드백">
-                <div class="absolute top-0 right-0 w-28 h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all"></div>
+            <div class="portfolio-card card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between overflow-hidden relative group"
+                data-category="reflection" data-title="최종 성찰 내용 학습 소감 미래 성장 평가 셀프 피드백">
+                <div
+                    class="absolute top-0 right-0 w-28 h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all">
+                </div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-violet-100 dark:bg-violet-900/60 text-violet-600 dark:text-violet-300 flex items-center gap-1.5">
+                        <span
+                            class="px-3 py-1 rounded-full text-xs font-bold bg-violet-100 dark:bg-violet-900/60 text-violet-600 dark:text-violet-300 flex items-center gap-1.5">
                             <i class="fa-solid fa-heart-pulse"></i> 배움과 성찰
                         </span>
                         <span class="text-xs text-slate-400 font-medium">Project 08</span>
                     </div>
-                    <div class="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/80 text-violet-600 dark:text-violet-400 flex items-center justify-center text-xl mb-4 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/80 text-violet-600 dark:text-violet-400 flex items-center justify-center text-xl mb-4 shadow-sm">
                         <i class="fa-solid fa-award"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                         최종 성찰 내용
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
@@ -490,11 +612,15 @@
 
                 <div>
                     <div class="flex flex-wrap gap-1.5 mb-5">
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#자기성찰</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#성장일기</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#최종평가</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#자기성찰</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#성장일기</span>
+                        <span
+                            class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">#최종평가</span>
                     </div>
-                    <button onclick="openModal('modal-8')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
+                    <button onclick="openModal('modal-8')"
+                        class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-600 transition-all font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 group-hover:shadow-md">
                         <span>자세히 보기</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
@@ -505,11 +631,14 @@
     </main>
 
     <!-- Modal Containers Section -->
-    <div id="modalOverlay" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 dark:border-slate-800 shadow-2xl relative p-6 sm:p-8 transform scale-95 transition-transform duration-300" id="modalContainer">
-            
+    <div id="modalOverlay"
+        class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 dark:border-slate-800 shadow-2xl relative p-6 sm:p-8 transform scale-95 transition-transform duration-300"
+            id="modalContainer">
+
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
@@ -519,10 +648,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10 bg-white dark:bg-slate-900 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+    <footer
+        class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10 bg-white dark:bg-slate-900 transition-colors">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
+                <div
+                    class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
                     AI
                 </div>
                 <div>
@@ -937,4 +1069,5 @@
         }
     </script>
 </body>
+
 </html>
