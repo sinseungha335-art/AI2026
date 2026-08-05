@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +41,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-    
+
     body {
       font-family: 'Pretendard', sans-serif;
       background-color: #090d16;
@@ -74,18 +75,22 @@
       width: 6px;
       height: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: #0b0f19;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #1e293b;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #10b981;
     }
   </style>
 </head>
+
 <body class="min-h-screen pb-20 selection:bg-emerald-500 selection:text-slate-950">
 
   <!-- Navigation Bar -->
@@ -93,15 +98,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <!-- Home Button -->
-        <a href="../index.html" class="flex items-center justify-center p-2 rounded-xl bg-slate-800/50 hover:bg-slate-700/80 text-slate-400 hover:text-emerald-400 border border-slate-700/50 transition-all" title="홈으로 이동">
+        <a href="../index.html"
+          class="flex items-center justify-center p-2 rounded-xl bg-slate-800/50 hover:bg-slate-700/80 text-slate-400 hover:text-emerald-400 border border-slate-700/50 transition-all"
+          title="홈으로 이동">
           <i data-lucide="home" class="w-5 h-5"></i>
         </a>
-        
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-900/50">
+
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-900/50">
           <i data-lucide="shield-check" class="w-6 h-6 text-slate-950"></i>
         </div>
         <div>
-          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">PRD & Architecture Specification</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">PRD & Architecture
+            Specification</span>
           <h1 class="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
             어린이 보호구역 안심 보행 지도
           </h1>
@@ -110,16 +119,28 @@
 
       <!-- Quick Nav Buttons -->
       <nav class="hidden md:flex items-center gap-1 text-sm">
-        <a href="#overview" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">개요</a>
-        <a href="#requirements" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">핵심 기능</a>
-        <a href="#algorithm" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">경로 알고리즘</a>
-        <a href="#ui-blueprint" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">UI 레이아웃</a>
-        <a href="#data-pipeline" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">데이터 파이프라인</a>
-        <a href="#qa-matrix" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">검증 기준</a>
+        <a href="#overview"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">개요</a>
+        <a href="#requirements"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">핵심
+          기능</a>
+        <a href="#algorithm"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">경로
+          알고리즘</a>
+        <a href="#ui-blueprint"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">UI
+          레이아웃</a>
+        <a href="#data-pipeline"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">데이터
+          파이프라인</a>
+        <a href="#qa-matrix"
+          class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-emerald-400 hover:bg-slate-800/60 transition-all">검증
+          기준</a>
       </nav>
 
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        <span
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           PRD v1.0 Ready
         </span>
@@ -129,36 +150,44 @@
 
   <!-- Hero Banner -->
   <section class="relative overflow-hidden pt-12 pb-16 border-b border-slate-800/50">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/20 via-slate-950 to-slate-950 pointer-events-none">
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-300 mb-4">
+        <span
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-medium text-slate-300 mb-4">
           <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i>
           전국 14,648개 스쿨존 데이터 기반
         </span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight leading-tight">
           CCTV 밀집도 & 도로폭 기반 <br class="hidden sm:inline">
-          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 bg-clip-text text-transparent">스쿨존 중심 최적 안심 보행 서비스</span>
+          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 bg-clip-text text-transparent">스쿨존 중심
+            최적 안심 보행 서비스</span>
         </h2>
         <p class="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed">
-          단순 최단 거리 탐색을 넘어, <strong class="text-slate-200">CCTV 감시망이 촘촘하고 도로 폭이 넓은 어린이 보호구역</strong>을 우선 경유하는 차세대 안심 도보 길찾기 플랫폼 상세 설계 사양서입니다.
+          단순 최단 거리 탐색을 넘어, <strong class="text-slate-200">CCTV 감시망이 촘촘하고 도로 폭이 넓은 어린이 보호구역</strong>을 우선 경유하는 차세대 안심 도보
+          길찾기 플랫폼 상세 설계 사양서입니다.
         </p>
 
         <!-- Dynamic Stat Highlights -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-left">
           <div class="glass-card p-4 rounded-xl border border-slate-800">
             <div class="text-xs text-slate-400 font-medium">총 보호구역 데이터</div>
-            <div class="text-2xl font-bold text-emerald-400 mt-1">14,648 <span class="text-xs font-normal text-slate-400">개소</span></div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">14,648 <span
+                class="text-xs font-normal text-slate-400">개소</span></div>
             <div class="text-[11px] text-slate-500 mt-0.5">전국표준데이터 전처리</div>
           </div>
           <div class="glass-card p-4 rounded-xl border border-slate-800">
             <div class="text-xs text-slate-400 font-medium">실시간 접근 알림</div>
-            <div class="text-2xl font-bold text-amber-400 mt-1">20m <span class="text-xs font-normal text-slate-400">범위</span></div>
+            <div class="text-2xl font-bold text-amber-400 mt-1">20m <span
+                class="text-xs font-normal text-slate-400">범위</span></div>
             <div class="text-[11px] text-slate-500 mt-0.5">Haversine + Web Audio</div>
           </div>
           <div class="glass-card p-4 rounded-xl border border-slate-800">
             <div class="text-xs text-slate-400 font-medium">보행 경로 모델</div>
-            <div class="text-2xl font-bold text-teal-400 mt-1">가중치 <span class="text-xs font-normal text-slate-400">Cost</span></div>
+            <div class="text-2xl font-bold text-teal-400 mt-1">가중치 <span
+                class="text-xs font-normal text-slate-400">Cost</span></div>
             <div class="text-[11px] text-slate-500 mt-0.5">CCTV + 도로폭 가중 탐색</div>
           </div>
           <div class="glass-card p-4 rounded-xl border border-slate-800">
@@ -190,12 +219,15 @@
         <!-- Card 1 -->
         <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/20">
+            <div
+              class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/20">
               <i data-lucide="target" class="w-5 h-5"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-100">프로젝트 목적</h3>
             <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-              공공데이터 포털의 <code class="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded text-xs">전국어린이보호구역표준데이터.csv</code>를 파싱하여, 단순 관찰을 넘어 **어린이의 안전한 통학로를 지능적으로 안내하는 웹 서비스**를 구축합니다.
+              공공데이터 포털의 <code
+                class="text-emerald-400 bg-slate-900 px-1.5 py-0.5 rounded text-xs">전국어린이보호구역표준데이터.csv</code>를 파싱하여, 단순
+              관찰을 넘어 **어린이의 안전한 통학로를 지능적으로 안내하는 웹 서비스**를 구축합니다.
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-500 flex items-center gap-2">
@@ -206,7 +238,8 @@
         <!-- Card 2 -->
         <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/20">
+            <div
+              class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/20">
               <i data-lucide="users" class="w-5 h-5"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-100">주요 타겟 페르소나</h3>
@@ -233,12 +266,14 @@
         <!-- Card 3 -->
         <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/20">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/20">
               <i data-lucide="sparkles" class="w-5 h-5"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-100">핵심 차별화 포인트</h3>
             <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-              기존 지도 서비스는 '최단 거리'만 제공하지만, 본 서비스는 **CCTV 밀집도와 넓은 도로폭(안전 보행 공간)**을 선호 가중치로 환산하여 우회하더라도 가장 안전한 **안심 스쿨존 경로**를 제시합니다.
+              기존 지도 서비스는 '최단 거리'만 제공하지만, 본 서비스는 **CCTV 밀집도와 넓은 도로폭(안전 보행 공간)**을 선호 가중치로 환산하여 우회하더라도 가장 안전한 **안심 스쿨존
+              경로**를 제시합니다.
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-500 flex items-center gap-2">
@@ -263,12 +298,24 @@
       <!-- Feature Interactive Tabs -->
       <div class="glass-panel rounded-2xl p-6 border border-slate-800">
         <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-4" id="req-tab-buttons">
-          <button onclick="switchReqTab('req1')" id="tab-req1" class="req-tab-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Req-1: 지도 & 클러스터</button>
-          <button onclick="switchReqTab('req2')" id="tab-req2" class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-2: 20m 접근 알림</button>
-          <button onclick="switchReqTab('req3')" id="tab-req3" class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-3: 동적 필터링</button>
-          <button onclick="switchReqTab('req4')" id="tab-req4" class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-4: 상세 팝업</button>
-          <button onclick="switchReqTab('req5')" id="tab-req5" class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-5: 길찾기 & Geocoding</button>
-          <button onclick="switchReqTab('req6')" id="tab-req6" class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-6: 안심 경로 추천</button>
+          <button onclick="switchReqTab('req1')" id="tab-req1"
+            class="req-tab-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Req-1:
+            지도 & 클러스터</button>
+          <button onclick="switchReqTab('req2')" id="tab-req2"
+            class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-2:
+            20m 접근 알림</button>
+          <button onclick="switchReqTab('req3')" id="tab-req3"
+            class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-3:
+            동적 필터링</button>
+          <button onclick="switchReqTab('req4')" id="tab-req4"
+            class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-4:
+            상세 팝업</button>
+          <button onclick="switchReqTab('req5')" id="tab-req5"
+            class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-5:
+            길찾기 & Geocoding</button>
+          <button onclick="switchReqTab('req6')" id="tab-req6"
+            class="req-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/50">Req-6:
+            안심 경로 추천</button>
         </div>
 
         <!-- Tab Contents Container -->
@@ -280,10 +327,12 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="map" class="w-5 h-5 text-emerald-400"></i> Req-1: 지도 및 마커 렌더링 (14,000+ MarkerCluster)
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Leaflet.js / Kakao Maps API</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Leaflet.js / Kakao Maps
+                API</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              전국 14,000여 개 보호구역 위경도 데이터를 대용량 손실 없이 렌더링하기 위해 <strong class="text-emerald-400">MarkerClusterer</strong> 기술을 적용합니다. 시설종류별로 색상을 다단계 구분하여 가독성을 높입니다.
+              전국 14,000여 개 보호구역 위경도 데이터를 대용량 손실 없이 렌더링하기 위해 <strong class="text-emerald-400">MarkerClusterer</strong>
+              기술을 적용합니다. 시설종류별로 색상을 다단계 구분하여 가독성을 높입니다.
             </p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
               <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex items-center gap-3">
@@ -323,15 +372,19 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="bell-ring" class="w-5 h-5 text-amber-400"></i> Req-2: 어린이 보호구역 20m 실시간 접근 알림
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Haversine + Web Audio API</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Haversine + Web Audio
+                API</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              사용자 위치 좌표($lat_1, lng_1$)와 보호구역 좌표($lat_2, lng_2$)의 구면 거리를 **Haversine 공식**으로 정밀 계산하여, 거리 $\le 20\text{m}$ 진입 시 Web Audio 비프음과 함께 시각적 토스트 Alert 메시지를 출력합니다.
+              사용자 위치 좌표($lat_1, lng_1$)와 보호구역 좌표($lat_2, lng_2$)의 구면 거리를 **Haversine 공식**으로 정밀 계산하여, 거리 $\le 20\text{m}$
+              진입 시 Web Audio 비프음과 함께 시각적 토스트 Alert 메시지를 출력합니다.
             </p>
             <!-- Interactive Beep Simulator Component -->
-            <div class="p-4 bg-slate-900/90 rounded-xl border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div
+              class="p-4 bg-slate-900/90 rounded-xl border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center animate-pulse">
+                <div
+                  class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center animate-pulse">
                   <i data-lucide="volume-2" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -339,7 +392,8 @@
                   <div class="text-xs text-slate-400">아래 버튼을 눌러 접근 시 실행되는 경고음 사운드 테스트</div>
                 </div>
               </div>
-              <button onclick="playAlertSound()" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs flex items-center gap-2 transition-all shrink-0">
+              <button onclick="playAlertSound()"
+                class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs flex items-center gap-2 transition-all shrink-0">
                 <i data-lucide="play" class="w-4 h-4"></i> 경고음 사운드 재생 테스트
               </button>
             </div>
@@ -351,7 +405,8 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="sliders" class="w-5 h-5 text-blue-400"></i> Req-3: 사이드바 조건 동적 필터링
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">실시간 UI Reactive State</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">실시간 UI Reactive
+                State</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="space-y-2 text-sm text-slate-300">
@@ -385,7 +440,8 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="message-square" class="w-5 h-5 text-teal-400"></i> Req-4: 마커 클릭 상세 팝업 (Popup Modal)
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Custom Leaflet Popup</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">Custom Leaflet
+                Popup</span>
             </div>
             <p class="text-sm text-slate-300">
               지도 위 보호구역 마커 클릭 시 대상 시설의 핵심 정보가 직관적으로 배치된 팝업 카드가 렌더링됩니다.
@@ -402,20 +458,24 @@
                   <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> 주소: 경기도 이천시 서희로 61
                 </div>
                 <div class="flex items-center gap-2">
-                  <i data-lucide="ruler" class="w-3.5 h-3.5 text-slate-400"></i> 보호구역 도로폭: <strong class="text-amber-400">8.0m ~ 12.0m</strong>
+                  <i data-lucide="ruler" class="w-3.5 h-3.5 text-slate-400"></i> 보호구역 도로폭: <strong
+                    class="text-amber-400">8.0m ~ 12.0m</strong>
                 </div>
                 <div class="flex items-center gap-2">
                   <i data-lucide="shield" class="w-3.5 h-3.5 text-slate-400"></i> 관할경찰서: 이천경찰서
                 </div>
                 <div class="flex items-center gap-2">
-                  <i data-lucide="video" class="w-3.5 h-3.5 text-slate-400"></i> CCTV 설치: <span class="text-emerald-400 font-bold">설치됨 (5대)</span>
+                  <i data-lucide="video" class="w-3.5 h-3.5 text-slate-400"></i> CCTV 설치: <span
+                    class="text-emerald-400 font-bold">설치됨 (5대)</span>
                 </div>
               </div>
               <div class="pt-2 flex gap-2">
-                <button class="flex-1 py-1.5 bg-emerald-500 text-slate-950 text-xs font-bold rounded-lg hover:bg-emerald-400">
+                <button
+                  class="flex-1 py-1.5 bg-emerald-500 text-slate-950 text-xs font-bold rounded-lg hover:bg-emerald-400">
                   출발지로 지정
                 </button>
-                <button class="flex-1 py-1.5 bg-slate-800 text-slate-200 text-xs font-bold rounded-lg hover:bg-slate-700">
+                <button
+                  class="flex-1 py-1.5 bg-slate-800 text-slate-200 text-xs font-bold rounded-lg hover:bg-slate-700">
                   도착지로 지정
                 </button>
               </div>
@@ -428,10 +488,12 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="navigation" class="w-5 h-5 text-indigo-400"></i> Req-5: 출발지/도착지 길찾기 & Geocoding
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">OpenStreetMap Nominatim</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">OpenStreetMap
+                Nominatim</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              사용자가 장소명, 도로명 주소, 지번 주소를 입력할 때 **실시간 Autocomplete(자동완성)**을 지원하며, 입력받은 텍스트는 OpenStreetMap Nominatim 지오코딩 API를 사용해 위경도 좌표로 자동 전환됩니다.
+              사용자가 장소명, 도로명 주소, 지번 주소를 입력할 때 **실시간 Autocomplete(자동완성)**을 지원하며, 입력받은 텍스트는 OpenStreetMap Nominatim 지오코딩
+              API를 사용해 위경도 좌표로 자동 전환됩니다.
             </p>
             <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
               <div class="text-xs font-bold text-slate-300">다양한 출발/도착 지점 설정 모드</div>
@@ -458,10 +520,12 @@
               <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400"></i> Req-6: CCTV & 도로폭 중심 스쿨존 최적 보행 경로 추천
               </h3>
-              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">가중치 Dijkstra / A* Routing</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-xs font-mono">가중치 Dijkstra / A*
+                Routing</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              일반 단순 최단 경로(Standard Shortest Route)와 달리, CCTV 설치 대수가 많고 보호구역 도로폭이 넓을수록 경로 이동 Cost(비용)를 가감 할인하여 **어린이 보행에 극대화된 안심 스쿨존 경로**를 선호 탐색합니다.
+              일반 단순 최단 경로(Standard Shortest Route)와 달리, CCTV 설치 대수가 많고 보호구역 도로폭이 넓을수록 경로 이동 Cost(비용)를 가감 할인하여 **어린이 보행에
+              극대화된 안심 스쿨존 경로**를 선호 탐색합니다.
             </p>
           </div>
 
@@ -482,28 +546,31 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
+
         <!-- Formula & Spec Explanation -->
         <div class="lg:col-span-5 space-y-6">
           <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
             <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
               <i data-lucide="calculator" class="w-4 h-4 text-emerald-400"></i> 경로 가중치 비용 공식
             </h3>
-            
+
             <!-- Rendered Latex Formula Box -->
-            <div id="katex-formula-container" class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center overflow-x-auto py-6">
+            <div id="katex-formula-container"
+              class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center overflow-x-auto py-6">
               <!-- Formula inserted via JavaScript Katex -->
             </div>
 
             <div class="text-xs text-slate-300 space-y-2 leading-relaxed">
               <p><strong class="text-emerald-400">Distance:</strong> 해당 보행 구간의 실제 물리적 거리 (m)</p>
-              <p><strong class="text-amber-400">CCTV Score:</strong> 구간 내/인근 CCTV 설치 대수 비례 점수 ($0 \sim 1$ normalized)</p>
+              <p><strong class="text-amber-400">CCTV Score:</strong> 구간 내/인근 CCTV 설치 대수 비례 점수 ($0 \sim 1$ normalized)
+              </p>
               <p><strong class="text-blue-400">Road Width Score:</strong> 보호구역 도로폭 비례 점수 ($0 \sim 1$ normalized)</p>
               <p><strong class="text-slate-400">w1, w2:</strong> 사용자 선호 가중치 상수 (기본값: $w_1 = 0.35, w_2 = 0.25$)</p>
             </div>
 
             <div class="p-3 bg-slate-900/80 rounded-xl text-xs text-slate-400 border border-slate-800">
-              💡 <strong>알고리즘 핵심 원리:</strong> 안전 요소(CCTV 및 도로폭)가 뛰어난 구간일수록 <code class="text-amber-400">Cost</code>가 대폭 할인되므로, 이동 거리가 약간 길어지더라도 안전한 스쿨존을 통과하는 경로가 최종 채택됩니다.
+              💡 <strong>알고리즘 핵심 원리:</strong> 안전 요소(CCTV 및 도로폭)가 뛰어난 구간일수록 <code class="text-amber-400">Cost</code>가 대폭
+              할인되므로, 이동 거리가 약간 길어지더라도 안전한 스쿨존을 통과하는 경로가 최종 채택됩니다.
             </div>
           </div>
         </div>
@@ -515,7 +582,9 @@
               <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
                 <i data-lucide="sliders-horizontal" class="w-4 h-4 text-amber-400"></i> 가중치 실시간 계산 시뮬레이터
               </h3>
-              <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">Live Interactive</span>
+              <span
+                class="text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">Live
+                Interactive</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -525,7 +594,8 @@
                   <span>실제 이동 거리 (Distance)</span>
                   <span id="val-dist" class="font-bold text-emerald-400">500 m</span>
                 </div>
-                <input type="range" id="input-dist" min="100" max="2000" step="50" value="500" oninput="updateSim()" class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                <input type="range" id="input-dist" min="100" max="2000" step="50" value="500" oninput="updateSim()"
+                  class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
               </div>
 
               <!-- Slider 2: CCTV Count -->
@@ -534,7 +604,8 @@
                   <span>CCTV 설치 대수 (개)</span>
                   <span id="val-cctv" class="font-bold text-amber-400">6 대</span>
                 </div>
-                <input type="range" id="input-cctv" min="0" max="15" step="1" value="6" oninput="updateSim()" class="w-full accent-amber-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                <input type="range" id="input-cctv" min="0" max="15" step="1" value="6" oninput="updateSim()"
+                  class="w-full accent-amber-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
               </div>
 
               <!-- Slider 3: Road Width -->
@@ -543,7 +614,8 @@
                   <span>보호구역 도로폭 (m)</span>
                   <span id="val-width" class="font-bold text-blue-400">12 m</span>
                 </div>
-                <input type="range" id="input-width" min="2" max="30" step="1" value="12" oninput="updateSim()" class="w-full accent-blue-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                <input type="range" id="input-width" min="2" max="30" step="1" value="12" oninput="updateSim()"
+                  class="w-full accent-blue-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
               </div>
 
               <!-- Slider 4: Weight 1 (w1) -->
@@ -552,7 +624,8 @@
                   <span>CCTV 가중치 (w1)</span>
                   <span id="val-w1" class="font-bold text-teal-400">0.35</span>
                 </div>
-                <input type="range" id="input-w1" min="0" max="0.5" step="0.05" value="0.35" oninput="updateSim()" class="w-full accent-teal-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                <input type="range" id="input-w1" min="0" max="0.5" step="0.05" value="0.35" oninput="updateSim()"
+                  class="w-full accent-teal-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
               </div>
             </div>
 
@@ -578,7 +651,7 @@
                 <span>시각적 경로 비교 시뮬레이션</span>
                 <span class="text-[10px] text-slate-500">Green = 안심 경로 / Slate = 일반 최단 경로</span>
               </div>
-              
+
               <svg class="w-full h-28" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- Start & End Nodes -->
                 <circle cx="40" cy="60" r="10" fill="#3b82f6" />
@@ -593,12 +666,13 @@
 
                 <!-- Safe School Zone Route (Curved Route passing through CCTV zone) -->
                 <path d="M 50 60 Q 250 10 450 60" stroke="#10b981" stroke-width="4" fill="none" />
-                
+
                 <!-- School Zone Node -->
                 <circle cx="250" cy="35" r="14" fill="#064e3b" stroke="#10b981" stroke-width="2" />
                 <text x="250" y="39" text-anchor="middle" fill="#34d399" font-size="10" font-weight="bold">스쿨존</text>
-                
-                <text x="250" y="15" text-anchor="middle" fill="#34d399" font-size="10">안심 스쿨존 선호 경로 (CCTV & 넓은 도로)</text>
+
+                <text x="250" y="15" text-anchor="middle" fill="#34d399" font-size="10">안심 스쿨존 선호 경로 (CCTV & 넓은
+                  도로)</text>
               </svg>
             </div>
 
@@ -623,7 +697,8 @@
       <!-- Mock Application UI Shell Wireframe -->
       <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
         <!-- Mock Top Bar -->
-        <div class="bg-slate-900 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <div
+          class="bg-slate-900 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
@@ -637,9 +712,10 @@
 
         <!-- Layout Wireframe Body -->
         <div class="grid grid-cols-1 md:grid-cols-12 min-h-[460px]">
-          
+
           <!-- Sidebar Section (Left 360px equivalent: 4 cols) -->
-          <div class="md:col-span-4 bg-slate-900/90 border-r border-slate-800 p-4 flex flex-col justify-between space-y-4">
+          <div
+            class="md:col-span-4 bg-slate-900/90 border-r border-slate-800 p-4 flex flex-col justify-between space-y-4">
             <div class="space-y-3">
               <!-- Search & Filter Controls -->
               <div class="text-xs font-bold text-slate-300 flex items-center justify-between">
@@ -648,8 +724,10 @@
               </div>
 
               <div class="space-y-2">
-                <input type="text" placeholder="출발지 검색 (예: 이천초등학교)" class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
-                <input type="text" placeholder="도착지 검색 (예: 중앙 어린이집)" class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+                <input type="text" placeholder="출발지 검색 (예: 이천초등학교)"
+                  class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+                <input type="text" placeholder="도착지 검색 (예: 중앙 어린이집)"
+                  class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
               </div>
 
               <!-- Route Option Card -->
@@ -686,24 +764,32 @@
           </div>
 
           <!-- Main Canvas / Map Section (Right: 8 cols) -->
-          <div class="md:col-span-8 bg-slate-950 relative p-6 flex flex-col justify-between overflow-hidden" style="background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 16px 16px;">
-            
+          <div class="md:col-span-8 bg-slate-950 relative p-6 flex flex-col justify-between overflow-hidden"
+            style="background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 16px 16px;">
+
             <!-- Map Floating Controls (Top Right) -->
             <div class="flex justify-between items-start">
-              <div class="bg-slate-900/90 px-3 py-1.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-center gap-2">
+              <div
+                class="bg-slate-900/90 px-3 py-1.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-center gap-2">
                 <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
-                 Leaflet / Kakao Canvas Rendering
+                Leaflet / Kakao Canvas Rendering
               </div>
 
               <!-- Floating Tool Buttons -->
               <div class="flex flex-col gap-2">
-                <button class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg" title="내 위치 찾기">
+                <button
+                  class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg"
+                  title="내 위치 찾기">
                   <i data-lucide="locate" class="w-4 h-4 text-emerald-400"></i>
                 </button>
-                <button class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg" title="20m 알림 ON/OFF">
+                <button
+                  class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg"
+                  title="20m 알림 ON/OFF">
                   <i data-lucide="bell" class="w-4 h-4 text-amber-400"></i>
                 </button>
-                <button class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg" title="위치 이동 시뮬레이터">
+                <button
+                  class="p-2 bg-slate-900 hover:bg-slate-800 text-slate-200 rounded-xl border border-slate-800 shadow-lg"
+                  title="위치 이동 시뮬레이터">
                   <i data-lucide="navigation" class="w-4 h-4 text-blue-400"></i>
                 </button>
               </div>
@@ -712,21 +798,25 @@
             <!-- Visual Marker Clusters Mock on Map -->
             <div class="my-auto relative h-48 w-full">
               <!-- Cluster 1 -->
-              <div class="absolute top-1/4 left-1/4 w-10 h-10 rounded-full bg-emerald-500/30 border-2 border-emerald-400 flex items-center justify-center font-bold text-xs text-emerald-300 glow-effect">
+              <div
+                class="absolute top-1/4 left-1/4 w-10 h-10 rounded-full bg-emerald-500/30 border-2 border-emerald-400 flex items-center justify-center font-bold text-xs text-emerald-300 glow-effect">
                 42
               </div>
               <!-- Cluster 2 -->
-              <div class="absolute top-1/2 left-2/3 w-12 h-12 rounded-full bg-amber-500/30 border-2 border-amber-400 flex items-center justify-center font-bold text-xs text-amber-300">
+              <div
+                class="absolute top-1/2 left-2/3 w-12 h-12 rounded-full bg-amber-500/30 border-2 border-amber-400 flex items-center justify-center font-bold text-xs text-amber-300">
                 128
               </div>
               <!-- Individual Pins -->
-              <div class="absolute bottom-1/3 left-1/2 p-1.5 bg-blue-500 rounded-full text-slate-950 font-bold text-[10px] shadow-lg flex items-center gap-1">
+              <div
+                class="absolute bottom-1/3 left-1/2 p-1.5 bg-blue-500 rounded-full text-slate-950 font-bold text-[10px] shadow-lg flex items-center gap-1">
                 <i data-lucide="school" class="w-3.5 h-3.5"></i>
               </div>
             </div>
 
             <!-- Bottom Alert Banner Mock (Req-2 Proximity Alert Preview) -->
-            <div class="bg-amber-500/20 border border-amber-500/40 p-3 rounded-xl flex items-center justify-between text-xs">
+            <div
+              class="bg-amber-500/20 border border-amber-500/40 p-3 rounded-xl flex items-center justify-between text-xs">
               <div class="flex items-center gap-2.5 text-amber-300">
                 <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 animate-bounce"></i>
                 <span><strong>20m 접근 알림:</strong> 현재 '이천초등학교 보호구역' 18m 전방입니다!</span>
@@ -758,11 +848,12 @@
           <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
             <i data-lucide="workflow" class="w-4 h-4 text-emerald-400"></i> ETL 전처리 공정 흐름
           </h3>
-          
+
           <div class="space-y-3 text-xs">
             <!-- Step 1 -->
             <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold shrink-0">1</span>
+              <span
+                class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold shrink-0">1</span>
               <div>
                 <div class="font-bold text-slate-200">원본 데이터 로드 (EUC-KR CSV)</div>
                 <div class="text-slate-400 mt-0.5"><code>전국어린이보호구역표준데이터.csv</code> (14,648건 레코드)</div>
@@ -771,7 +862,8 @@
 
             <!-- Step 2 -->
             <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold shrink-0">2</span>
+              <span
+                class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold shrink-0">2</span>
               <div>
                 <div class="font-bold text-slate-200">Node.js 전처리 스크립트 실행 (make_data_json.js)</div>
                 <div class="text-slate-400 mt-0.5">위경도 Float 변환, 주소 결합 및 불필요한 결측치 정제</div>
@@ -780,7 +872,8 @@
 
             <!-- Step 3 -->
             <div class="p-3 bg-slate-900 rounded-xl border border-slate-800 flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">3</span>
+              <span
+                class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">3</span>
               <div>
                 <div class="font-bold text-emerald-400">최적화 정제 파일 생성 (schoolzones.json)</div>
                 <div class="text-slate-400 mt-0.5">클라이언트에 즉시 로딩 가능한 경량화된 JSON 객체 변환</div>
@@ -798,7 +891,8 @@
             <span class="text-[10px] text-slate-500 font-mono">JSON Format</span>
           </div>
 
-          <pre class="p-4 bg-slate-950 rounded-xl text-xs font-mono text-emerald-300 overflow-x-auto border border-slate-800 space-y-1"><code>[
+          <pre
+            class="p-4 bg-slate-950 rounded-xl text-xs font-mono text-emerald-300 overflow-x-auto border border-slate-800 space-y-1"><code>[
   {
     <span class="text-slate-400">"id"</span>: <span class="text-amber-300">"ZONE_00001"</span>,
     <span class="text-slate-400">"facility_name"</span>: <span class="text-amber-300">"이천초등학교"</span>,
@@ -904,7 +998,8 @@
 
   <!-- Footer -->
   <footer class="mt-20 border-t border-slate-800/80 pt-8 pb-12 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <div class="flex items-center gap-2">
         <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
         <span>어린이 보호구역 안심 보행 스마트 지도 PRD Specification Document</span>
@@ -921,7 +1016,7 @@
     lucide.createIcons();
 
     // Render Math Formula using KaTeX
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const formulaContainer = document.getElementById("katex-formula-container");
       const latexFormula = "\\text{Cost} = \\text{Distance} \\times \\left(1 - w_1 \\times \\text{CCTV\\_Score} - w_2 \\times \\text{Road\\_Width\\_Score}\\right)";
       katex.render(latexFormula, formulaContainer, {
@@ -944,7 +1039,7 @@
 
       // Show selected content
       document.getElementById('content-' + tabId).classList.remove('hidden');
-      
+
       // Highlight selected button
       const activeBtn = document.getElementById('tab-' + tabId);
       activeBtn.classList.remove('bg-slate-800/80', 'text-slate-400', 'border-slate-700/50');
@@ -1012,4 +1107,5 @@
     }
   </script>
 </body>
+
 </html>
