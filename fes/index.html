@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Web Platform - 웹 플랫폼 소개 및 매뉴얼</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Noto Sans KR) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f5ff',
+                            100: '#e0ebff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#ec4899',
+                            600: '#db2777',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="../index.html" class="inline-flex items-center space-x-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-3 py-2 rounded-xl text-xs border border-slate-200/80 shadow-sm transition-all duration-200">
+                        <i class="fa-solid fa-house"></i>
+                        <span>홈</span>
+                    </a>
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center text-white font-black text-xl shadow-md">
+                        F
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-slate-900 tracking-tight">Festival Web Platform</span>
+                        <span class="hidden sm:inline-block text-xs bg-brand-100 text-brand-700 font-semibold px-2 py-0.5 rounded-full ml-2">v1.0 (Vercel App)</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#overview" class="text-slate-600 hover:text-brand-600 transition-colors">프로젝트 개요</a>
+                    <a href="#features" class="text-slate-600 hover:text-brand-600 transition-colors">핵심 기능</a>
+                    <a href="#ui-preview" class="text-slate-600 hover:text-brand-600 transition-colors">화면 미리보기</a>
+                    <a href="#tech-stack" class="text-slate-600 hover:text-brand-600 transition-colors">기술 스택</a>
+                    <a href="#faq" class="text-slate-600 hover:text-brand-600 transition-colors">FAQ</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="https://festival01-a4hzk5chx-dd-a5a0.vercel.app/" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-600 to-accent-500 hover:from-brand-700 hover:to-accent-600 text-white font-medium px-4 py-2 rounded-xl text-sm shadow-md shadow-brand-500/20 hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5">
+                        <span>실제 웹 앱 바로가기</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-28 pb-16 md:pt-36 md:pb-24 gradient-bg text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(236,72,153,0.15),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span class="text-xs font-semibold tracking-wide text-white/90">스마트 축제 경험 안내 가이드</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+                    축제의 모든 순간을<br>
+                    <span class="gradient-text">더 똑똑하고 매끄럽게</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed font-light">
+                    실시간 공연 일상 타임테이블, 부스 지도, 푸드트럭 대기 현황 등<br class="hidden sm:inline">
+                    현장 방문객과 주최자를 연결하는 스마트 축제 통합 안내 플랫폼입니다.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://festival01-a4hzk5chx-dd-a5a0.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 font-bold rounded-xl shadow-lg hover:bg-slate-100 transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-rocket text-brand-600"></i>
+                        <span>배포된 앱 직접 체험하기</span>
+                    </a>
+                    <a href="#overview" class="w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 backdrop-blur-md transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>소개 상세 보기</span>
+                    </a>
+                </div>
+
+                <!-- Key Metrics Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-10 border-t border-white/10 text-left">
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <p class="text-xs text-slate-400">배포 플랫폼</p>
+                        <p class="text-xl font-bold text-white mt-1">Vercel Edge Platform</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <p class="text-xs text-slate-400">반응형 모바일 지원</p>
+                        <p class="text-xl font-bold text-white mt-1">100% Mobile Ready</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <p class="text-xs text-slate-400">인터랙티브 정보</p>
+                        <p class="text-xl font-bold text-white mt-1">실시간 동기화</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <p class="text-xs text-slate-400">사용자 경험</p>
+                        <p class="text-xl font-bold text-white mt-1">설치 없는 Web 기반</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Overview -->
+    <section id="overview" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Project Overview</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold text-slate-900">왜 Festival Web App이 필요한가요?</h3>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                    종이 팜플렛의 불편함과 현장의 혼잡을 줄이고, 축제 방문객이 휴대폰만으로 축제장의 모든 정보와 서비스를 실시간으로 확인하도록 돕습니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">실시간 시간표 & 알림</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        무대별 공연 시간표와 아티스트 라인업을 일자별로 편리하게 확인하고, 관심 있는 공연의 시작 시간을 미리 챙길 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-pink-100 text-accent-500 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">한눈에 보는 스마트 맵</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        푸드트럭, 체험 부스, 화장실, 의무실 등 축제장 내 주요 시설 위치를 지도 위에서 빠르게 탐색합니다.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">스마트 부스 & 푸드 정보</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        부스별 메인 메뉴, 가격 및 대기 상황을 앱 내에서 미리 파악하여 줄 서는 시간을 크게 단축합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Detail -->
+    <section id="features" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">Key Functionalities</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold text-slate-900">플랫폼 핵심 모듈 구성</h3>
+                <p class="mt-4 text-slate-600">
+                    축제 운영에 필수적인 4가지 핵심 모듈이 조화롭게 작동합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Feature Block 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">1. 라인업 & 타임테이블 (Lineup)</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            날짜(Day 1, Day 2 등) 및 무대(Stage A, B) 카테고리 필터링 기능을 제공하여 원하는 공연을 유연하게 탐색할 수 있습니다.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>날짜/무대별 필터링 기능</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>아티스트 상세 프로필 및 곡 정보</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature Block 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-pink-50 text-accent-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">2. 인터랙티브 행사장 가이드 (Interactive Map)</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            복잡한 행사장을 시각적이고 직관적인 디지털 맵 형태로 구현하여 현재 위치 기준 최단 이동 동선을 파악할 수 있습니다.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>카테고리별 Pin(핀) 온/오프 필터</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>의무실, 화장실, 종합안내소 Quick 찾아가기</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature Block 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">3. 푸드트럭 & 부스 정보 (Booth Catalog)</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            축제 내 먹거리와 체험 부스의 상세 메뉴, 가격, 현장 스탬프 이벤트 등 방문객이 즐길거리를 한곳에 구성했습니다.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>메뉴판 미리보기 및 가격 안내</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>부스별 이벤트 및 할인 쿠폰 연동 가능</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature Block 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex-shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">4. 긴급 알림 & 현장 안내 (Notice System)</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            우천 시 일정 변경, 잃어버린 물건 찾기, 주최 측의 실시간 긴급 공지사항을 팝업 및 상단 배너로 즉시 전달합니다.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>실시간 팝업 공지 기능</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>교통 및 주차장 잔여 공간 안내</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Screen Mockup / Tab Preview -->
+    <section id="ui-preview" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">UI/UX Walkthrough</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold text-slate-900">모바일 인터페이스 미리보기</h3>
+                <p class="mt-4 text-slate-600">탭을 클릭하여 주요 화면 구조와 동작 원리를 확인해보세요.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border transition-all bg-brand-600 text-white border-brand-600 shadow-sm">
+                    📱 홈 & 웰컴
+                </button>
+                <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border transition-all bg-white text-slate-600 border-slate-300 hover:bg-slate-100">
+                    🎵 공연 타임테이블
+                </button>
+                <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border transition-all bg-white text-slate-600 border-slate-300 hover:bg-slate-100">
+                    🗺️ 지도 & 맵
+                </button>
+            </div>
+
+            <!-- Tab Content Mockup Container -->
+            <div class="max-w-md mx-auto bg-slate-900 p-4 rounded-[40px] shadow-2xl border-4 border-slate-700">
+                <!-- Screen Content -->
+                <div class="bg-slate-50 rounded-[28px] overflow-hidden min-h-[480px] text-slate-800 relative">
+                    
+                    <!-- Tab 1: Home -->
+                    <div id="content-tab1" class="tab-content p-5 space-y-4">
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <div>
+                                <h5 class="text-xs text-slate-500 font-medium">2026 FESTIVAL</h5>
+                                <h4 class="text-lg font-black text-slate-900">서울 뮤직 페스티벌</h4>
+                            </div>
+                            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-full text-[10px] font-bold">LIVE ON</span>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-brand-600 to-indigo-600 rounded-xl p-4 text-white">
+                            <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white font-semibold">NOW PLAYING</span>
+                            <h5 class="text-base font-bold mt-2">Main Stage: 인디밴드 A</h5>
+                            <p class="text-xs text-slate-200 mt-1">14:00 - 15:30</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <i class="fa-solid fa-map-location-dot text-brand-600 text-xl mb-1"></i>
+                                <p class="text-xs font-bold">행사장 지도</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm text-center">
+                                <i class="fa-solid fa-burger text-amber-500 text-xl mb-1"></i>
+                                <p class="text-xs font-bold">푸드트럭</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 flex items-center space-x-2">
+                            <i class="fa-solid fa-bullhorn text-amber-600 text-sm"></i>
+                            <span>공지: B주차장 만차, 대중교통 이용 권장</span>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Timetable -->
+                    <div id="content-tab2" class="tab-content hidden p-5 space-y-3">
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <h4 class="text-base font-bold text-slate-900">공연 타임테이블</h4>
+                            <div class="flex space-x-1 text-xs">
+                                <span class="bg-brand-600 text-white px-2 py-0.5 rounded-md font-medium">DAY 1</span>
+                                <span class="bg-slate-200 text-slate-600 px-2 py-0.5 rounded-md font-medium">DAY 2</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm flex justify-between items-center">
+                                <div>
+                                    <span class="text-[10px] text-brand-600 font-bold uppercase">14:00 - 15:00</span>
+                                    <h5 class="text-sm font-bold text-slate-800">오프닝 루키 무대</h5>
+                                    <p class="text-[11px] text-slate-500">Main Stage</p>
+                                </div>
+                                <i class="fa-regular fa-star text-slate-400"></i>
+                            </div>
+
+                            <div class="p-3 bg-brand-50 border border-brand-200 rounded-xl shadow-sm flex justify-between items-center">
+                                <div>
+                                    <span class="text-[10px] text-brand-700 font-bold uppercase">15:30 - 17:00</span>
+                                    <h5 class="text-sm font-bold text-brand-900">헤드라이너 밴드 B</h5>
+                                    <p class="text-[11px] text-brand-600">Sub Stage</p>
+                                </div>
+                                <i class="fa-solid fa-star text-amber-500"></i>
+                            </div>
+
+                            <div class="p-3 bg-white rounded-xl border border-slate-200 shadow-sm flex justify-between items-center">
+                                <div>
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">17:30 - 19:00</span>
+                                    <h5 class="text-sm font-bold text-slate-800">특별 게스트 C</h5>
+                                    <p class="text-[11px] text-slate-500">Main Stage</p>
+                                </div>
+                                <i class="fa-regular fa-star text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Map -->
+                    <div id="content-tab3" class="tab-content hidden p-5 space-y-3">
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <h4 class="text-base font-bold text-slate-900">행사장 구역 지도</h4>
+                            <span class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded">interactive</span>
+                        </div>
+
+                        <div class="h-44 bg-slate-200 rounded-xl relative overflow-hidden flex items-center justify-center border border-slate-300">
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                            
+                            <!-- Fake Map Pin Markers -->
+                            <div class="absolute top-6 left-12 bg-brand-600 text-white text-[10px] px-2 py-0.5 rounded-full shadow-md font-bold flex items-center space-x-1">
+                                <i class="fa-solid fa-music"></i>
+                                <span>메인 무대</span>
+                            </div>
+
+                            <div class="absolute bottom-8 right-10 bg-amber-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-md font-bold flex items-center space-x-1">
+                                <i class="fa-solid fa-burger"></i>
+                                <span>푸드존</span>
+                            </div>
+
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full shadow-md font-bold flex items-center space-x-1">
+                                <i class="fa-solid fa-cross"></i>
+                                <span>의무실</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs">
+                            <p class="font-bold text-slate-800 mb-1">📍 내 위치 기반 편의시설 Search</p>
+                            <p class="text-slate-500">가장 가까운 화장실까지 도보 2분 (120m)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="py-16 md:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-500 mb-2">Tech Architecture</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold">기술 스택 & 배포 환경</h3>
+                <p class="mt-4 text-slate-400">
+                    안정적인 고성능 웹 서비스 구현을 위해 검증된 최신 모던 프론트엔드 에코시스템을 사용했습니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-brands fa-react text-3xl text-sky-400 mb-3"></i>
+                    <h5 class="text-sm font-bold">React</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">UI 라이브러리</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-solid fa-bolt text-3xl text-amber-400 mb-3"></i>
+                    <h5 class="text-sm font-bold">Vite / Next.js</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">빠른 번들링 & SSR</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-solid fa-paint-brush text-3xl text-teal-400 mb-3"></i>
+                    <h5 class="text-sm font-bold">Tailwind CSS</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">반응형 유틸리티 스타일</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-solid fa-triangle-exclamation text-3xl text-white mb-3"></i>
+                    <h5 class="text-sm font-bold">Vercel Platform</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">글로벌 CDN 배포</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-solid fa-mobile-screen-button text-3xl text-emerald-400 mb-3"></i>
+                    <h5 class="text-sm font-bold">PWA Ready</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">모바일 웹앱 최적화</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/60 text-center hover:border-brand-500 transition-colors">
+                    <i class="fa-solid fa-map-marked-alt text-3xl text-rose-400 mb-3"></i>
+                    <h5 class="text-sm font-bold">Maps API</h5>
+                    <p class="text-[11px] text-slate-400 mt-1">위치 정보 서비스</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">FAQ</h2>
+                <h3 class="text-2xl sm:text-4xl font-bold text-slate-900">자주 묻는 질문</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none">
+                        <span>Q. 앱을 별도로 다운로드해야 하나요?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        아닙니다. Web 기반 싱글페이지 애플리케이션(SPA)으로 구축되어, 모바일 브라우저 URL 접속만으로 별도의 App Store / Google Play 설치 없이 즉시 사용할 수 있습니다.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none">
+                        <span>Q. Vercel 배포 주소는 무엇인가요?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        제공받으신 <code class="bg-slate-100 px-1.5 py-0.5 rounded text-brand-600">https://festival01-a4hzk5chx-dd-a5a0.vercel.app/</code> 도메인을 통해 Vercel Edge Network 상에서 빌드되어 빠르고 높은 가용성으로 서빙됩니다.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center focus:outline-none">
+                        <span>Q. 다른 축제에도 맞춤 적용(Customizing)이 가능한가요?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        네, 가능합니다. JSON/데이터 베이스 구조를 통하여 타임테이블, 부스 목록, 축제 지도 이미지를 손쉽게 교체할 수 있는 모듈형 구조로 설계되어 있습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="text-white font-bold text-base mb-1">Festival Web Platform Showcase</p>
+                <p class="text-xs">스마트 축제 경험 안내 및 서비스 소개 페이지입니다.</p>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="https://festival01-a4hzk5chx-dd-a5a0.vercel.app/" target="_blank" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition-colors">
+                    배포 앱 이동 <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Reset all button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white', 'border-brand-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
+            });
+
+            // Show target content
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            
+            // Activate current button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-300');
+            activeBtn.classList.add('bg-brand-600', 'text-white', 'border-brand-600');
+        }
+
+        function toggleFaq(index) {
+            const ans = document.getElementById('faq-ans-' + index);
+            const icon = document.getElementById('faq-icon-' + index);
+
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
