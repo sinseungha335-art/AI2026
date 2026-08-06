@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Service - 전국 학교 급식 정보 안내 서비스</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .badge-pulse {
+            animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass border-b border-slate-200/80 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Left Side: Home Button & Logo -->
+            <div class="flex items-center gap-3">
+                <!-- Home Button -->
+                <a href="../index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 font-medium text-xs sm:text-sm border border-slate-200 transition-all hover:border-emerald-200 mr-1" title="메인 홈으로 이동">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">홈</span>
+                </a>
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-200 group-hover:scale-105 transition-transform">
+                        <i data-lucide="utensils" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900">Meal <span class="text-emerald-600">Service</span></span>
+                </a>
+                <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200 hidden md:inline-block">소개 페이지</span>
+            </div>
+            
+            <!-- Center Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+                <a href="#features" class="hover:text-emerald-600 transition-colors">주요 기능</a>
+                <a href="#demo" class="hover:text-emerald-600 transition-colors">체험 시뮬레이터</a>
+                <a href="#architecture" class="hover:text-emerald-600 transition-colors">기술 스택</a>
+                <a href="#faq" class="hover:text-emerald-600 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Right CTA Button -->
+            <div class="flex items-center gap-2">
+                <a href="https://meal-service-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-emerald-200 hover:shadow-emerald-300 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                    <span>실제 웹 앱 접속하기</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-emerald-50/60 via-slate-50 to-slate-50">
+        <!-- Background decoration circles -->
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-emerald-200/30 to-teal-200/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-semibold mb-6 shadow-sm badge-pulse">
+                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
+                <span>전국 초·중·고등학교 맞춤형 급식 정보 서비스</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                오늘 우리 학교 급식 메뉴는?<br class="hidden sm:inline"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-700">Meal Service</span>에서 스마트하게 확인하세요
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+                교육부 **NEIS 공공 데이터** 기반의 실시간 학교 급식 정보 안내 웹 플랫폼입니다.<br class="hidden sm:inline"/>
+                알레르기 정보, 영양성분, 주간 식단표까지 한눈에 깔끔하게 파악할 수 있습니다.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                <a href="https://meal-service-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-200 hover:shadow-emerald-300 transition-all hover:-translate-y-0.5">
+                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                    <span>실제 웹 앱 바로 접속</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                </a>
+                <a href="#demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-100 text-slate-700 font-bold text-base border border-slate-200 shadow-sm transition-all">
+                    <i data-lucide="play-circle" class="w-5 h-5 text-emerald-600"></i>
+                    <span>기능 미리보기 체험</span>
+                </a>
+            </div>
+
+            <!-- Stat Cards / Quick Highlights -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-emerald-600">12,000+</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">전국 지원 학교 수</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-emerald-600">NEIS API</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">공공 데이터 연동</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-emerald-600">1~19번</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">알레르기 정보 자동 가이드</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                    <div class="text-2xl font-extrabold text-emerald-600">100%</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 mt-1">반응형 모바일 최적화</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-2">Key Features</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">급식 확인이 더 편리해지는 핵심 기능</p>
+                <p class="text-slate-500 mt-3 text-sm sm:text-base">학생, 학부모, 교직원 모두를 위한 맞춤형 급식 정보 서비스의 특징입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i data-lucide="search" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">전국 학교 간편 검색</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        초·중·고등학교 이름을 입력하면 나이스(NEIS) 데이터를 통해 전국 모든 학교의 최신 식단표를 즉시 검색해 줍니다.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">알레르기 식재료 가이드</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        식단 옆 표기된 숫자를 분석하여 (1. 난류, 2. 우유, 5. 대두 등) 어떤 알레르기 유발 물질이 포함되어 있는지 한눈에 표기합니다.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <i data-lucide="calendar" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">일간 & 주간 식단표 선택</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        오늘의 중식/석식 메뉴뿐만 아니라 주간 캘린더를 통해 이번 주 전체 급식 일정과 칼로리를 한 번에 미리 확인할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Simulator Section -->
+    <section id="demo" class="py-16 md:py-24 bg-slate-100/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-2 block">Interactive Preview</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">앱 화면을 여기서 직접 눌러보세요</h2>
+                <p class="text-slate-500 mt-2 text-sm">Meal Service의 실제 작동 방식을 시뮬레이션해 볼 수 있습니다.</p>
+            </div>
+
+            <!-- Simulator Card Box -->
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+                <!-- Browser Header Bar -->
+                <div class="bg-slate-800 text-white px-4 py-3 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <!-- Clickable Web URL inside simulator header -->
+                    <a href="https://meal-service-iota.vercel.app/" target="_blank" class="bg-slate-700/80 hover:bg-slate-700 text-emerald-400 font-mono text-xs px-4 py-1.5 rounded-full flex items-center gap-1.5 transition-colors">
+                        <i data-lucide="lock" class="w-3 h-3 text-slate-400"></i>
+                        <span>https://meal-service-iota.vercel.app/</span>
+                        <i data-lucide="external-link" class="w-3 h-3 ml-1 text-slate-400"></i>
+                    </a>
+                    <div class="w-12"></div>
+                </div>
+
+                <!-- App Mock UI Container -->
+                <div class="p-6 sm:p-8 bg-slate-50">
+                    <!-- Search Bar Mockup -->
+                    <div class="mb-6">
+                        <label class="block text-xs font-semibold text-slate-500 mb-1.5">학교 선택 시뮬레이션</label>
+                        <div class="relative">
+                            <input type="text" value="서울고등학교" readonly class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-bold text-slate-800 pl-10 shadow-sm focus:outline-none">
+                            <i data-lucide="building-2" class="w-4 h-4 text-emerald-600 absolute left-3.5 top-3"></i>
+                            <span class="absolute right-3 top-2.5 text-xs bg-emerald-100 text-emerald-800 font-medium px-2 py-0.5 rounded-md">서울특별시 서초구</span>
+                        </div>
+                    </div>
+
+                    <!-- Meal Type Filter Tabs -->
+                    <div class="flex items-center gap-2 border-b border-slate-200 pb-4 mb-6">
+                        <button id="btn-lunch" onclick="selectMeal('lunch')" class="px-4 py-2 rounded-xl font-bold text-sm bg-emerald-600 text-white shadow-sm transition-all flex items-center gap-1.5">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                            <span>오늘의 중식</span>
+                        </button>
+                        <button id="btn-dinner" onclick="selectMeal('dinner')" class="px-4 py-2 rounded-xl font-bold text-sm bg-white text-slate-600 hover:bg-slate-200 border border-slate-200 transition-all flex items-center gap-1.5">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                            <span>오늘의 석식</span>
+                        </button>
+                    </div>
+
+                    <!-- Meal Content Area -->
+                    <div id="meal-content-lunch" class="space-y-3">
+                        <div class="flex justify-between items-center bg-emerald-50/80 p-3 rounded-xl border border-emerald-100">
+                            <span class="text-xs font-bold text-emerald-800 flex items-center gap-1">
+                                <i data-lucide="flame" class="w-4 h-4 text-emerald-600"></i> 총 열량: 748.2 kcal
+                            </span>
+                            <span class="text-xs font-medium text-slate-500">2026.08.06 (목)</span>
+                        </div>
+
+                        <!-- Menu Item List -->
+                        <div class="bg-white rounded-2xl border border-slate-200 p-4 space-y-2.5 shadow-sm text-sm">
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">현미잡곡밥</span>
+                                <span class="text-xs text-slate-400 font-mono">-</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">돈육김치찌개</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono cursor-pointer hover:bg-emerald-100 hover:text-emerald-800" onclick="alert('알레르기 5: 대두, 6: 밀, 10: 돼지고기')" title="클릭 시 알레르기 안내">5.6.10</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">수제 닭강정</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono cursor-pointer hover:bg-emerald-100 hover:text-emerald-800" onclick="alert('알레르기 1: 난류, 2: 우유, 5: 대두, 6: 밀, 15: 닭고기')" title="클릭 시 알레르기 안내">1.2.5.6.15</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">시금치나물무침</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono cursor-pointer hover:bg-emerald-100 hover:text-emerald-800" onclick="alert('알레르기 5: 대두')" title="클릭 시 알레르기 안내">5</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">깍두기</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono cursor-pointer hover:bg-emerald-100 hover:text-emerald-800" onclick="alert('알레르기 9: 새우')" title="클릭 시 알레르기 안내">9</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1">
+                                <span class="font-medium text-slate-800">유기농 저지방 우유</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono cursor-pointer hover:bg-emerald-100 hover:text-emerald-800" onclick="alert('알레르기 2: 우유')" title="클릭 시 알레르기 안내">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dinner Content Area (Hidden by default) -->
+                    <div id="meal-content-dinner" class="space-y-3 hidden">
+                        <div class="flex justify-between items-center bg-indigo-50/80 p-3 rounded-xl border border-indigo-100">
+                            <span class="text-xs font-bold text-indigo-800 flex items-center gap-1">
+                                <i data-lucide="flame" class="w-4 h-4 text-indigo-600"></i> 총 열량: 680.5 kcal
+                            </span>
+                            <span class="text-xs font-medium text-slate-500">2026.08.06 (목)</span>
+                        </div>
+
+                        <div class="bg-white rounded-2xl border border-slate-200 p-4 space-y-2.5 shadow-sm text-sm">
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">소고기 야채볶음밥</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono">5.6.16</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">계란파국</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono">1.5.6</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                                <span class="font-medium text-slate-800">치즈 떡볶이</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono">2.5.6</span>
+                            </div>
+                            <div class="flex items-center justify-between py-1">
+                                <span class="font-medium text-slate-800">배추김치</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono">9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allergy Info Note -->
+                    <p class="text-[11px] text-slate-400 mt-4 text-center">
+                        💡 식단 오른쪽 숫자를 클릭해 보세요! 알레르기 유발 재료 번호를 확인할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Architecture Section -->
+    <section id="architecture" class="py-16 md:py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-2 block">Architecture</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">신뢰할 수 있는 기술 아키텍처</h2>
+                <p class="text-slate-500 mt-2 text-sm">공공 API 연동 및 서버리스 환경으로 신속하고 안정적인 서비스를 제공합니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">NEIS OpenAPI</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        교육부 나이스 개방 포털의 실시간 급식 데이터 REST API를 연동하여 전국 모든 학교의 정밀 식단 데이터를 전달받습니다.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-4">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">React / Next.js</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        모바일과 컴포넌트 중심의 React 아키텍처를 적용하여 빠른 화면 전환과 직관적인 UI 반응속도를 보장합니다.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center mb-4">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">Vercel Cloud</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Vercel 글로벌 Edge 네트워크를 활용하여 99.9% 이상의 높은 가동률과 빠른 초기 페이지 로딩 속도를 유지합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-2 block">FAQ</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">자주 묻는 질문</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-emerald-600"></i>
+                        별도의 회원가입이나 로그인 절차가 필요한가요?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">
+                        아닙니다. Meal Service는 별도의 회원가입 없이 학교 이름만 입력하면 누구든지 바로 이용할 수 있는 완전 무료 공개 웹 서비스입니다.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-emerald-600"></i>
+                        주말이나 방학 기간에도 급식 조회가 되나요?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">
+                        학교 현장에서 NEIS 시스템에 식단을 등록한 일정에 한하여 제공됩니다. 주말이나 방학 등 급식이 제공되지 않는 날에는 급식 정보가 없음으로 표시됩니다.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-emerald-600"></i>
+                        알레르기 표기 숫자는 무엇을 의미하나요?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">
+                        식품의약품안전처 지정 19가지 주요 알레르기 유발 식재료 번호입니다 (1:난류, 2:우유, 3:메밀, 4:땅콩, 5:대두, 6:밀, 7:고등어, 8:게, 9:새우, 10:돼지고기 등).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-4xl font-extrabold mb-4 tracking-tight">지금 바로 우리 학교 급식을 확인해 보세요!</h2>
+            <p class="text-emerald-100 text-sm sm:text-base mb-8 max-w-xl mx-auto">
+                설치 없이 웹 브라우저에서 즉시 실행되는 Meal Service 웹 앱에 접속하세요.
+            </p>
+            <a href="https://meal-service-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-emerald-800 font-extrabold text-base shadow-xl hover:bg-emerald-50 transition-all hover:-translate-y-0.5">
+                <span>Meal Service 웹 앱 바로가기</span>
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <a href="../index.html" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+                    <i data-lucide="home" class="w-3.5 h-3.5"></i>
+                    <span>홈</span>
+                </a>
+                <span class="text-slate-600">|</span>
+                <span class="font-bold text-slate-200">Meal Service 안내 페이지</span>
+            </div>
+
+            <div>
+                Data provided by <a href="https://open.neis.go.kr/" target="_blank" class="text-emerald-400 hover:underline">교육부 NEIS 개방포털</a>
+            </div>
+
+            <div class="text-slate-500">
+                &copy; 2026 Meal Service. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Meal toggle simulation script
+        function selectMeal(type) {
+            const lunchBtn = document.getElementById('btn-lunch');
+            const dinnerBtn = document.getElementById('btn-dinner');
+            const lunchContent = document.getElementById('meal-content-lunch');
+            const dinnerContent = document.getElementById('meal-content-dinner');
+
+            if (type === 'lunch') {
+                lunchBtn.className = "px-4 py-2 rounded-xl font-bold text-sm bg-emerald-600 text-white shadow-sm transition-all flex items-center gap-1.5";
+                dinnerBtn.className = "px-4 py-2 rounded-xl font-bold text-sm bg-white text-slate-600 hover:bg-slate-200 border border-slate-200 transition-all flex items-center gap-1.5";
+                lunchContent.classList.remove('hidden');
+                dinnerContent.classList.add('hidden');
+            } else {
+                dinnerBtn.className = "px-4 py-2 rounded-xl font-bold text-sm bg-indigo-600 text-white shadow-sm transition-all flex items-center gap-1.5";
+                lunchBtn.className = "px-4 py-2 rounded-xl font-bold text-sm bg-white text-slate-600 hover:bg-slate-200 border border-slate-200 transition-all flex items-center gap-1.5";
+                dinnerContent.classList.remove('hidden');
+                lunchContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
